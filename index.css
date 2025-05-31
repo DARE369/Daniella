@@ -1,0 +1,142 @@
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body.dark-theme {
+  background-color: #1c2c2c;
+  color: #f4f4f4;
+}
+
+body.light-theme {
+  background-color: #ffffff;
+  color: #222222;
+}
+
+header.hero {
+  background: url('hero.jpg') no-repeat center center/cover;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+header .overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+header h1 {
+  font-size: 3rem;
+  text-align: center;
+  color: white;
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 0.5rem 1rem;
+  background-color: #444;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+section {
+  padding: 3rem 2rem;
+}
+
+.intro-content,
+.property-content,
+.testimonial-row,
+.listing-row {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.intro-content img,
+.property-content img,
+.testimonial img {
+  max-width: 300px;
+  border-radius: 10px;
+}
+
+button {
+  background-color: teal;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+button:hover {
+  background-color: #0d8a8a;
+}
+
+.service-box,
+.listing,
+.testimonial {
+  background-color: #2e3d3d;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 250px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+}
+
+.service-box.appear,
+.listing.appear,
+.testimonial.appear {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+footer {
+  padding: 2rem;
+  background-color: #111;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  color: white;
+}
+
+footer .footer-links,
+footer .social {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+footer i {
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.cta {
+  text-align: center;
+  background-color: #244;
+  padding: 4rem 2rem;
+  color: white;
+}
