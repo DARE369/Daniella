@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daniella & Daniella Inc.</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="dark-theme">
+  <header class="hero">
+    <div class="overlay">
+      <h1>Daniella & Daniella</h1>
+    </div>
+    <button id="themeToggle" class="theme-toggle">Toggle Theme</button>
+  </header>
+
+  <section class="intro">
+    <h2>Daniella & Daniella Inc. has a place for everyone</h2>
+    <div class="intro-content">
+      <img src="property1.jpg" alt="Living Room">
+      <p>We believe that everyone deserves a spot to call home. Claim yours today from our diverse range of properties.</p>
+      <button>Learn More</button>
+    </div>
+  </section>
+
+  <section class="services">
+    <div class="service-box">What we do</div>
+    <div class="service-box">What we do</div>
+    <div class="service-box">What we do</div>
+  </section>
+
+  <section class="property">
+    <h2>Property pic goes here</h2>
+    <div class="property-content">
+      <img src="property2.jpg" alt="Modern chair">
+      <div>
+        <p>Location stuff like that</p>
+        <button onclick="inquire()">Inquire</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="featured">
+    <h2>Featured Listings</h2>
+    <div class="listing-row">
+      <div class="listing">For Sale</div>
+      <div class="listing">For Lease</div>
+      <div class="listing">For Rent</div>
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <h2>Testimonials</h2>
+    <p>Written copy about what ppl are saying. Just another way to pitch to ppl why this service is better than the one they’re already using.</p>
+    <div class="testimonial-row">
+      <div class="testimonial">
+        <img src="person1.jpg" alt="Happy client">
+        <p>"Amazing experience! Highly recommended."</p>
+      </div>
+      <div class="testimonial">
+        <img src="person2.jpg" alt="Happy client">
+        <p>"They made the process so smooth and easy."</p>
+      </div>
+      <div class="testimonial">
+        <img src="person3.jpg" alt="Happy client">
+        <p>"Truly a company that cares."</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>If you’re done with property/landlords that <strong>painpoints</strong>, book with us today</h2>
+    <div class="cta-buttons">
+      <button>Buy</button>
+      <button>Sell</button>
+      <button>Rent</button>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-brand">Daniella</div>
+    <div class="footer-links">
+      <span>Contact us</span>
+      <span>Business Hours</span>
+    </div>
+    <div class="social">
+      <span>Get social</span>
+      <i class="fab fa-facebook"></i>
+      <i class="fab fa-twitter"></i>
+      <i class="fab fa-instagram"></i>
+    </div>
+  </footer>
+
+  <script>
+    // Inquire Button Functionality
+    function inquire() {
+      alert("Thank you for your interest! Our team will reach out shortly.");
+    }
+
+    // Theme Toggle
+    const themeToggle = document.getElementById('themeToggle');
+    themeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-theme');
+      document.body.classList.toggle('light-theme');
+    });
+
+    // Scroll Animation
+    const faders = document.querySelectorAll('.service-box, .testimonial, .listing');
+    const appearOptions = {
+      threshold: 0.3,
+      rootMargin: "0px 0px -50px 0px"
+    };
+
+    const appearOnScroll = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('appear');
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+
+    faders.forEach(fader => appearOnScroll.observe(fader));
+  </script>
+</body>
+</html>
